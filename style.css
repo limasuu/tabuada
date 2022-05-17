@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root{
+    --verde: rgb(55, 68, 56);
+    --branco: rgb(238, 238, 238);
+    --amarelo: rgb(255, 217, 0);
+    --azul: rgb(192, 225, 231);
+    --azul-medio: rgba(192, 225, 231, 0.603);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    font-family: cursive;
+    font-size: 14px;
+}
+
+body{
+    background-color: var(--verde);
+    color: var(--branco);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 2rem;
+    width: 100vw;
+    height: 100vh;  
+}
+
+h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: var(--amarelo);
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;    
+}
+
+.botoes button{
+    width: 21rem;
+    padding: 1rem;
+    margin: 0 1rem;
+
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+
+    border-radius: 2rem;
+    border: 2px solid var(--verde);
+    background-color: var(--azul);
+    color: var(--verde);    
+}
+
+.botoes button:hover{
+    background-color: var(--azul-medio);
+    color: var(--branco);
+}
+
+.botoes .clicado{
+    background-color: var(--verde);
+    color: var(--branco);
+    border-color: var(--branco);
+}
