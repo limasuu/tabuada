@@ -68,3 +68,40 @@ h1{
     color: var(--branco);
     border-color: var(--branco);
 }
+
+.quadro-tabuada{
+    border: 2px solid var(--branco);
+    border-radius: 2rem;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tabuada-i{
+    width: 20%;
+    height: 50%;
+    padding: 1rem;
+    border-right: 2px dashed var(--amarelo);    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabuada-i:nth-of-type(-n+5){
+    border-bottom: 2px dashed var(--amarelo); 
+}
+
+.tabuada-i:nth-of-type(5n){
+    border-right: 0;
+}
+
+.linha-tabuada-i{ 
+    min-width: 40%;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.3rem;    
+}
