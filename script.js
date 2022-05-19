@@ -16,13 +16,13 @@ const calcularTabuada= op => {
         
         switch(op){
             case OPERACOES[0]: 
-                return () => vet.map(y => y+x);
+                return () => vet.map(y => [`${y}+${x}`,  y+x]);
             case OPERACOES[1]: 
-                return () => vet.map(y => y-x);
+                return () => vet.map(y => [`${y+x}-${x}`, y]);
             case OPERACOES[2]: 
-                return () => vet.map(y => y*x);
+                return () => vet.map(y => [`${y}&#215;${x}`, y*x]);
             case OPERACOES[3]: 
-                return () => vet.map(y => y/x);
+                return () => vet.map(y => [`${y*x}&#247;${x}`, y]);
             default:
                 return undefined;
         }        
