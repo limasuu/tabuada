@@ -29,27 +29,30 @@ const calcularTabuada= op => {
     };
 };
 
+const escreverTabuada= operacao => {
 
-
-ADICAOBUTTON.addEventListener('click', () => {
-
-    const tabuadaAdicao= calcularTabuada("ADIÇÃO");
+    const tabuada= calcularTabuada(operacao);
 
     for(let i=1; i<=10; i++){
 
-        const tabuada_i= tabuadaAdicao(i)();
+        const tabuada_i= tabuada(i)();
 
-        const novaDiv= document.createElement('div');
-        QUADRODIV.appendChild(novaDiv);
-        novaDiv.classList.add('tabuada-i');
+        const TABUADA_IDIV= document.createElement('div');
+        QUADRODIV.appendChild(TABUADA_IDIV);
+        TABUADA_IDIV.classList.add('tabuada-i');
         
-
         for(let conta of tabuada_i){
-            const novaLinha= document.createElement('div');
-            novaDiv.appendChild(novaLinha);
-            novaLinha.classList.add('linha-tabuada-i');
+            const LINHATABUADA= document.createElement('div');
+            TABUADA_IDIV.appendChild(LINHATABUADA);
+            LINHATABUADA.classList.add('linha-tabuada-i');
 
-            novaLinha.innerHTML= conta[0] + "= " + conta[1];
+            LINHATABUADA.innerHTML= conta[0] + "= " + conta[1];
         }
     }
-});
+};
+
+
+ADICAOBUTTON.addEventListener('click', () => escreverTabuada(ADICAOBUTTON.innerText));
+SUBTRACAOBUTTON.addEventListener('click', () => escreverTabuada(SUBTRACAOBUTTON.innerText));
+MULTIPLICACAOBUTTON.addEventListener('click', () => escreverTabuada(MULTIPLICACAOBUTTON.innerText));
+DIVISAOBUTTON.addEventListener('click', () => escreverTabuada(DIVISAOBUTTON.innerText));
