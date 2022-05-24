@@ -1,8 +1,5 @@
 const QUADRODIV= document.querySelector("#quadro");
-const ADICAOBUTTON= document.querySelector("#adicao");
-const SUBTRACAOBUTTON= document.querySelector("#subtracao");
-const MULTIPLICACAOBUTTON= document.querySelector("#multiplicacao");
-const DIVISAOBUTTON= document.querySelector("#divisao");
+const BOTOES= document.querySelectorAll("button");
 
 const calcularTabuada= op => {
     
@@ -51,8 +48,16 @@ const escreverTabuada= operacao => {
     }
 };
 
+BOTOES.forEach( botao => botao.addEventListener('click', () => {
 
-ADICAOBUTTON.addEventListener('click', () => escreverTabuada(ADICAOBUTTON.innerText));
-SUBTRACAOBUTTON.addEventListener('click', () => escreverTabuada(SUBTRACAOBUTTON.innerText));
-MULTIPLICACAOBUTTON.addEventListener('click', () => escreverTabuada(MULTIPLICACAOBUTTON.innerText));
-DIVISAOBUTTON.addEventListener('click', () => escreverTabuada(DIVISAOBUTTON.innerText));
+    QUADRODIV.innerHTML= "";
+    
+    Array.from(BOTOES).filter(
+        b1 => b1.classList.contains('clicado')
+        ).forEach( 
+            b2 => b2.classList.remove('clicado')
+    );
+
+    escreverTabuada(botao.innerText);
+    botao.classList.add('clicado');
+}));

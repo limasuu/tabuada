@@ -63,10 +63,11 @@ h1{
     color: var(--branco);
 }
 
-.botoes .clicado{
+.botoes .clicado, .botoes .clicado:hover{
     background-color: var(--verde);
     color: var(--branco);
     border-color: var(--branco);
+    cursor: default;
 }
 
 .quadro-tabuada{
