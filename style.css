@@ -40,13 +40,14 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1rem;    
+    width: 100%;
 }
 
-.botoes button{
-    width: 21rem;
+button{
+    width: 100%;
     padding: 1rem;
-    margin: 0 1rem;
 
     cursor: pointer;
     font-weight: bold;
@@ -58,7 +59,7 @@ h1{
     color: var(--verde);    
 }
 
-.botoes button:hover{
+button:hover{
     background-color: var(--azul-medio);
     color: var(--branco);
 }
@@ -83,26 +84,74 @@ h1{
 }
 
 .tabuada-i{
-    width: 20%;
-    height: 50%;
+    width: 100%;
+    height: 10%;
     padding: 1rem;
-    border-right: 2px dashed var(--amarelo);    
+    border-top: 2px dashed var(--amarelo);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.tabuada-i:nth-of-type(-n+5){
-    border-bottom: 2px dashed var(--amarelo); 
+.tabuada-i:first-of-type{
+    border-top: 0; 
 }
 
-.tabuada-i:nth-of-type(5n){
-    border-right: 0;
-}
-
-.linha-tabuada-i{ 
+.linha-tabuada-i{
     min-width: 40%;
     font-family: 'Pacifico', cursive;
-    font-size: 1.3rem;    
+    font-size: 2rem;    
+    text-align: center;
+}
+
+@media only screen and (min-width:480px){    
+    button{
+        width: 50%; 
+    }
+
+    .tabuada-i{
+        width: 50%;
+        height: 20%;
+        border-right: 2px dashed var(--amarelo);  
+    }
+
+    .tabuada-i:nth-of-type(-n+2){
+        border-top: 0; 
+    }
+    
+    .tabuada-i:nth-of-type(2n){
+        border-right: 0;
+    }
+}
+
+@media only screen and (min-width:960px){
+    button{
+        width: 25%;
+    }
+
+    .tabuada-i{
+        width: 20%;
+        height: 50%;
+    }
+
+    .tabuada-i:nth-of-type(-n+2){
+        border-top: 2px dashed var(--amarelo); 
+    }
+
+    .tabuada-i:nth-of-type(-n+5){
+        border-top: 0;
+    }
+
+    .tabuada-i:nth-of-type(2n){
+        border-right: 2px dashed var(--amarelo); 
+    }
+    
+    .tabuada-i:nth-of-type(5n){
+        border-right: 0;
+    }
+
+    .linha-tabuada-i{ 
+        font-size: 1.3rem; 
+    }
 }

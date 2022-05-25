@@ -11,4 +11,5 @@ Este projeto apresenta dinamicamente a tabuada das 4 operações fundamentais. S
 ## :art: Layout
 
 ![layout1](layout1.png)
-
+![layout2](layout2.png)
+![layout3](layout3.png)
